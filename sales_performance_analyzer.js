@@ -31,21 +31,34 @@ console.log(determinePerformanceRating(testPerformanceRating)); //output: Good
 
 // Task 3: Create a Function to Identify Top and Bottom Performers
 
-
-const testSalesData = [
+const salesData = [
     { name: 'Alice', sales: [12000, 15000, 13000] },
     { name: 'Bob', sales: [7000, 6000, 7500] },
     { name: 'Charlie', sales: [3000, 4000, 3500] },
     { name: 'Diana', sales: [9000, 8500, 9200] }
 ]; // sample dataset
 
+
 function findTopAndBottomPerformers(salesData) {
     if (salesData.length === 0)
         return { topPerformer:null, bottomPerformer:null }
-    const totalSalesData = salesData.reduce((accumulator,value) => sales + value)
+    const totalSalesData = salesData.reduce((sales, value) => sales + value)
     const topPerformer = Math.max(totalSalesData)
     const bottomPerformer = Math.min(totalSalesData)
     return (("Top Performer:", topPerformer),("Bottom Performer", bottomPerformer))
 }
 
-console.log(findTopAndBottomPerformers(testSalesData))
+console.log("Top & Bottom Performers", findTopAndBottomPerformers(salesData))
+
+
+// Task 4: Combine Functions to Generate a Performance Report
+
+function generatePerformanceReport(salesData) {
+    const performanceReport = salesData.map(salesData =>{
+        const averageSales = calculateAverageSales(salesData.sales) //finds average sales per employee
+        const performanceRating = determinePerformanceRating (averageSales) //determines performance rating per employee's average sales
+        return { name: salesData.name, averageSales, performanceRating} //returns string information about employee and their sales
+    })
+}
+
+console.log("Performance Report:", generatePerformanceReport(salesData))
