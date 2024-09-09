@@ -42,7 +42,7 @@ const salesData = [
 function findTopAndBottomPerformers(salesData) {
     if (salesData.length === 0)
         return { topPerformer:null, bottomPerformer:null }
-    const totalSalesData = salesData.reduce((sales, value) => sales + value)
+    const totalSalesData = salesData.reduce((sales, value) => sales + value) //adds the sales together into one sum
     const topPerformer = Math.max(totalSalesData)
     const bottomPerformer = Math.min(totalSalesData)
     return (("Top Performer:", topPerformer),("Bottom Performer", bottomPerformer))
