@@ -1,2 +1,2 @@
-# Coding-Challenge-3
-This is the repository for the Coding Challenge 3 assignment for ISM 3232.
+# Sales Performance Analyzer
+This is a sales performance analyzer application, allowing the user to find the overall average sales and create a performance report for each salesperson.
